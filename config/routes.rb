@@ -1,12 +1,12 @@
 SbpMappo::Application.routes.draw do
-	
+		devise_for :users
 
 	resources :users, :except => [:create, :update, :destroy, :index] do
 		resources :schedules, :except => [:index, :destroy, :show]
 		resources :patients
 	end
 
-	devise_for :users
+
 
 	# The priority is based upon order of creation:
 	# first created -> highest priority.
