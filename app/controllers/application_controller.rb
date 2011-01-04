@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 	private
 	def set_selected_date
 		if !params[:selected_date]
-			params[:selected_date] = Time.now
+			params[:selected_date] = Time.now.to_s
 		end
 	end
 	

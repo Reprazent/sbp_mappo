@@ -52,22 +52,7 @@ class SchedulesController < ApplicationController
 		end
 	end
 	
-	def next
-		if params[:selected_date]
-			params[:selected_date] = Time.parse(params[:selected_date]) + 7.days
-		else
-			params[:selected_date] = Time.now
-		end
-		render "users/show"
-	end
-	def previous
-		if params[:selected_date]
-			params[:selected_date] = Time.parse(params[:selected_date]) - 7.days
-		else
-			params[:selected_date] = Time.now
-		end
-		render "users/show"
-	end
+	
 
 
 end
