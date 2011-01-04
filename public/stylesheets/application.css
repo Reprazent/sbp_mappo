@@ -1,7 +1,7 @@
-.new_schedule table {
+form[class*="_schedule"] table {
 	width:100%;
 }
-.new_schedule input{
+form[class*="_schedule"] input{
 	width:10%;
 }
 .schedule {
@@ -10,10 +10,23 @@
 .schedule .day {
 	width:14%;
 	float:left;
+	border-style:solid;
+	border-width:1px;
 }
 .schedule .day .title {
 	font-weight:bold;
 }
 .schedule .day .workday {
 	font-style:italic;
+	
+}
+.schedule .day .hour {
+	border-top-style:solid;
+	border-width:1px;
+	height:40px;
+	font-style:italic;
+	font-size:x-small;
+}
+.schedule .day .not_working {
+	background-color:#909090;
 }

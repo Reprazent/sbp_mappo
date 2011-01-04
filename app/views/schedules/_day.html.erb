@@ -1,8 +1,14 @@
+<% workday = current_user.schedule.workdays.where(:day_of_week => date.wday).first %>
 <div class="day">
 	<div class='title'>
 		<%= date.strftime("%a %d %b %Y") %>
 	</div>
 	<div class='workday'>
-		<%= current_user.schedule.workdays.where(:day_of_week => date.wday).first.to_s %>
+		<%= workday.to_s %>
+	</div>
+	<div class="hours">
+	<% 7.upto 20 do |n| %>
+		<div class='hour <%= "not_working" if (n <= workday.start_time.hour || n >= workday.end_time.hour  ) %>'><%= n -%></div>
+	<% end %>
 	</div>
 </div>
