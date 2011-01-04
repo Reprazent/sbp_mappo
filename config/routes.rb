@@ -1,7 +1,10 @@
 SbpMappo::Application.routes.draw do
+	
+	get "schedules/next"
+	get "schedules/previous"
 
 	resources :users, :except => [:create, :update, :destroy, :index] do
-		resources :schedules, :except => [:index, :destroy]
+		resources :schedules, :except => [:index, :destroy, :show]
 		resources :patients
 	end
 

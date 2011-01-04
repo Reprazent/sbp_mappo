@@ -1,0 +1,19 @@
+.new_schedule table {
+	width:100%;
+}
+.new_schedule input{
+	width:10%;
+}
+.schedule {
+	width:100%;
+}
+.schedule .day {
+	width:14%;
+	float:left;
+}
+.schedule .day .title {
+	font-weight:bold;
+}
+.schedule .day .workday {
+	font-style:italic;
+}

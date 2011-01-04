@@ -1,17 +1,35 @@
-<%= form_for(@schedule) do |f| %>
-  <% if @schedule.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@schedule.errors.count, "error") %> prohibited this schedule from being saved:</h2>
+<%= form_for([current_user, @schedule]) do |f| %>
+<% if @schedule.errors.any? %>
+<div id="error_explanation">
+	<h2><%= pluralize(@schedule.errors.count, "error") %> prohibited this schedule from being saved:</h2>
 
-      <ul>
-      <% @schedule.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+	<ul>
+		<% @schedule.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
+<table>
+	<tr>
+		<td>Day</td>
+		<td>Start Time</td>
+		<td>End Time</td>
+	</tr>
+	<% f.fields_for :workdays do |day| %>
+		<tr>
+			<td>
+			<%= day.object.day_name %>
+			<%= day.hidden_field :day_of_week %>	
+			</td>
+			<td><%= day.time_text_field :start_time%></td>
+			<td><%= day.time_text_field :end_time%></td>
+		</tr>
+	<% end %>
+</table>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+<div class="actions">
+	<%= f.submit %>
+</div>
 <% end %>

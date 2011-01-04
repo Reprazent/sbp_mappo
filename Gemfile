@@ -33,3 +33,4 @@ gem "rspec-rails", ">= 2.0.1", :group => [:development, :test]
 gem "cucumber-rails", :group => :test
 gem "capybara", :group => :test
 gem "devise"
+gem "date_time_text_field_helpers", :git => "git://github.com/eric1234/date_time_text_field_helpers.git"

@@ -1,0 +1,8 @@
+<div class="day">
+	<div class='title'>
+		<%= date.strftime("%a %d %b %Y") %>
+	</div>
+	<div class='workday'>
+		<%= current_user.schedule.workdays.where(:day_of_week => date.wday).first.to_s %>
+	</div>
+</div>

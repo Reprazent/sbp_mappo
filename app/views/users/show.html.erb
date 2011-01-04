@@ -1,0 +1,14 @@
+<h1>Users#show</h1>
+<div id="patients">
+	Show the users patients
+</div>
+<div id="shedule">
+	<% if current_user.schedule %>
+		<%= render current_user.schedule %>
+	<% else %>
+		<p>
+			You haven't set your schedule yet, please do it  <%= link_to "here", [:new, current_user, :schedule] %>
+		</p>
+	<% end %>
+</div>
+
