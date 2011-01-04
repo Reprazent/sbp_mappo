@@ -1,4 +1,6 @@
 SbpMappo::Application.routes.draw do
+  resources :schedules, :except => [:index, :destroy]
+
   resources :patients
 
   devise_for :users
@@ -52,7 +54,7 @@ SbpMappo::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+  root :to => "schedules#show"
 
   # See how all your routes lay out with "rake routes"
 
