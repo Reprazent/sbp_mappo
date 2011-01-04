@@ -46,7 +46,6 @@ Devise.setup do |config|
   config.encryptor = :bcrypt
 
   # Setup a pepper to generate the encrypted password.
-<<<<<<< HEAD
   config.pepper = "29a63591a1b38b5e6828e52c40e302ff5b288acdedc0a99335ad5ac0ff2bc16840d216939011429a01a2e62c66eb7f3b9047b854c9c3dfa242b563a70ae9b21d"
 
   # ==> Configuration for :confirmable
