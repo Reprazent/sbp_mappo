@@ -2,4 +2,7 @@
 db/*.sqlite3
 log/*.log
 tmp/**/*
+<<<<<<< HEAD
 tmp/*
+=======
+>>>>>>> refs/remotes/origin/master
