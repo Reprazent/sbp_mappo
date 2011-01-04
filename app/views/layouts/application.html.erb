@@ -10,6 +10,10 @@
 <menu>
 	<% if user_signed_in? %>
 		<%= "Hello #{current_user.first_name}"%>
+		<% if current_user.schedule %>
+			<%= link_to "edit you shedule", [:edit, current_user, current_user.schedule] %>
+		<% end%>
+		
 	<% end %>
 </menu>
 <%= yield %>

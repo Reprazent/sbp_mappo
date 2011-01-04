@@ -43,7 +43,7 @@ class SchedulesController < ApplicationController
 
 		respond_to do |format|
 			if @schedule.update_attributes(params[:schedule])
-				format.html { redirect_to([current_user, @schedule], :notice => 'Schedule was successfully updated.') }
+				format.html { redirect_to([current_user], :notice => 'Schedule was successfully updated.') }
 				format.xml  { head :ok }
 			else
 				format.html { render :action => "edit" }
