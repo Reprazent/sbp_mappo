@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-<<<<<<< HEAD
 	protect_from_forgery
 	before_filter :authenticate_user!, :set_selected_date
 	
@@ -9,8 +8,4 @@ class ApplicationController < ActionController::Base
 			params[:selected_date] = Time.now.to_s
 		end
 	end
-	
-=======
-  protect_from_forgery
->>>>>>> refs/remotes/origin/master
 end

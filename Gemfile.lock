@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 GIT
   remote: git://github.com/eric1234/date_time_text_field_helpers.git
   revision: 988a4e983666d64137805acc6e27d8fd96bb1066
@@ -6,8 +5,6 @@ GIT
     date_time_text_field_helpers (0.0.6)
       rails
 
-=======
->>>>>>> refs/remotes/origin/master
 GEM
   remote: http://rubygems.org/
   specs:
@@ -138,10 +135,7 @@ PLATFORMS
 DEPENDENCIES
   capybara
   cucumber-rails
-<<<<<<< HEAD
   date_time_text_field_helpers!
-=======
->>>>>>> refs/remotes/origin/master
   devise
   rails (= 3.0.3)
   rspec-rails (>= 2.0.1)
