@@ -1,5 +1,5 @@
 <% workday = current_user.schedule.workdays.where(:day_of_week => date.wday).first %>
-<div class="day">
+<div class="day <%= "today" if date.strftime("%a %d %b %Y") == Date.today.strftime("%a %d %b %Y") %>">
 	<div class='title'>
 		<%= date.strftime("%a %d %b %Y") %>
 	</div>
@@ -7,8 +7,15 @@
 		<%= workday.to_s %>
 	</div>
 	<div class="hours">
-	<% 7.upto 20 do |n| %>
-		<div class='hour <%= "not_working" if (n <= workday.start_time.hour || n >= workday.end_time.hour  ) %>'><%= n -%></div>
+	<% 7.upto 20 do |h| %>
+		<div class='hour <%= "not_working" if (h < workday.start_time.hour || h >= workday.end_time.hour  ) %>'>
+		<em><%= h -%></em>
+		<% 0.upto 60 do |m| %>
+			<div class="minute <%= "half_hour" if m == 30 %>">
+				
+			</div>
+		<% end %>
+		</div>
 	<% end %>
 	</div>
 </div>

@@ -13,6 +13,9 @@ form[class*="_schedule"] input{
 	border-style:solid;
 	border-width:1px;
 }
+.schedule .today {
+	background-color:#E8EFE8;
+}
 .schedule .day .title {
 	font-weight:bold;
 }
@@ -22,10 +25,24 @@ form[class*="_schedule"] input{
 }
 .schedule .day .hour {
 	border-top-style:solid;
+	float:left;
+	width:100%;
 	border-width:1px;
-	height:40px;
 	font-style:italic;
 	font-size:x-small;
+}
+.schedule .day .hour em {
+	float:left;
+}
+.schedule .day .hour .minute{
+	height:1px;
+}
+.schedule .day .hour .half_hour{
+	height:1px;
+	width:100%;
+	float:left;
+	border-width:1px;
+	border-bottom-style:dotted;
 }
 .schedule .day .not_working {
 	background-color:#909090;
