@@ -24,7 +24,7 @@ class PatientsController < ApplicationController
   # GET /patients/new
   # GET /patients/new.xml
   def new
-    @patient = Patient.new
+    @patient = current_user.patients.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -40,11 +40,11 @@ class PatientsController < ApplicationController
   # POST /patients
   # POST /patients.xml
   def create
-    @patient = Patient.new(params[:patient])
+    @patient = current_user.patients.build(params[:patient])
 
     respond_to do |format|
       if @patient.save
-        format.html { redirect_to(@patient, :notice => 'Patient was successfully created.') }
+        format.html { redirect_to(current_user, :notice => 'Patient was successfully created.') }
         format.xml  { render :xml => @patient, :status => :created, :location => @patient }
       else
         format.html { render :action => "new" }

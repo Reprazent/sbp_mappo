@@ -10,4 +10,5 @@ class User < ActiveRecord::Base
 	validates_presence_of :last_name
 
 	has_one :schedule
+	has_many :patients
 end

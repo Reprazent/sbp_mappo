@@ -1,8 +1,7 @@
 <div class="schedule">
-	
 	<% 0.upto 6 do |n|%>
 	<%= render :partial => "schedules/day", :locals => {:date =>(Time.parse(params[:selected_date]) - (Time.parse(params[:selected_date]).wday - n).days)} %>
 	<%end%>
+	<%= link_to "previous", :selected_date => (Time.parse(params[:selected_date]) - 7.days)%>
+	<%= link_to "next", :selected_date => (Time.parse(params[:selected_date]) + 7.days)%>
 </div>
-<%= link_to "previous", :selected_date => (Time.parse(params[:selected_date]) - 7.days)%>
-<%= link_to "next", :selected_date => (Time.parse(params[:selected_date]) + 7.days)%>

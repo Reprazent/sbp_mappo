@@ -1,4 +1,4 @@
-<%= form_for(@patient) do |f| %>
+<%= form_for([current_user, @patient]) do |f| %>
   <% if @patient.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@patient.errors.count, "error") %> prohibited this patient from being saved:</h2>
@@ -10,7 +10,18 @@
       </ul>
     </div>
   <% end %>
-
+<p>
+<%= f.label :first_name %>
+<%= f.text_field :first_name %>
+</p>
+<p>
+<%= f.label :last_name %>
+<%= f.text_field :last_name %>
+</p>
+<p>
+<%= f.label :email %>
+<%= f.text_field :email %>
+</p>
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -24,8 +24,18 @@ ActiveRecord::Schema.define(:version => 20110104132628) do
     t.datetime "updated_at"
   end
 
-# Could not dump table "patients" because of following StandardError
-#   Unknown type 'reference' for column 'user'
+  create_table "patients", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "telephone"
+    t.string   "mobile"
+    t.string   "comments"
+    t.string   "default_contact_method"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
 
   create_table "schedules", :force => true do |t|
     t.integer  "user_id"

@@ -1,6 +1,9 @@
 <h1>Users#show</h1>
 <div id="patients">
-	Show the users patients
+	<ul>
+	<%= render current_user.patients %>
+	</ul>
+	<%= link_to "Add patient", [:new, current_user, :patient] %>
 </div>
 <div id="shedule">
 	<% if current_user.schedule %>
