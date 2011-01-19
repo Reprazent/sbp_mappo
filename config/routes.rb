@@ -1,10 +1,20 @@
 SbpMappo::Application.routes.draw do
+  # get "appointments/create"
+  # 
+  # get "appointments/update"
+  # 
+  # get "appointments/delete"
+  # 
+  # get "appointments/edit"
+
 		devise_for :users
 
-	resources :users, :except => [:create, :update, :destroy, :index] do
-		resources :schedules, :except => [:index, :destroy, :show]
-		resources :patients
-	end
+		resources :users, :except => [:create, :update, :destroy, :index] do
+			resources :schedules, :except => [:index, :destroy, :show]
+			resources :patients do
+				resources :appointments, :except => [:index, :show]
+			end
+		end
 
 
 

@@ -1,5 +1,6 @@
 
 	<li>
 		<%= patient.first_name%>
+		<%= link_to "Make appointment", [:new, current_user, patient, :appointment]%>
 	</li>
 
