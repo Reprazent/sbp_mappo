@@ -14,12 +14,16 @@ class AppointmentsController < ApplicationController
 	end
 
 	def update
+		@appointment = Appointment.find(params[:id])
+		@appointment.update_attributes(params[:appointment])
+		redirect_to current_user, :selected_date => @appointment.date
 	end
 
 	def delete
 	end
 
 	def edit
+		@appointment = Appointment.find(params[:id])
 	end
 
 end

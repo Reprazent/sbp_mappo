@@ -7,16 +7,29 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-<menu>
+<div  class="clearfix" id="containter">
+<menu class="clearfix">
 	<% if user_signed_in? %>
+		<p>
 		<%= "Hello #{current_user.first_name}"%>
+		</p>
 		<% if current_user.schedule %>
-			<%= link_to "edit you shedule", [:edit, current_user, current_user.schedule] %>
-		<% end%>
+		<div id="edit-schedule" class="button">
 		
+			<%= link_to "edit you shedule", [:edit, current_user, current_user.schedule] %>
+		
+		</div>
+		<div class="button calender-location">
+			<%= link_to image_tag("left.jpg"), :selected_date => (Time.parse(params[:selected_date]) - 7.days)%>
+			<%= link_to image_tag("today.jpg"), :selected_date => Date.today %>
+			<%= link_to image_tag("right.jpg"), :selected_date => (Time.parse(params[:selected_date]) + 7.days)%>
+		</div>
+		<% end%>
 	<% end %>
 </menu>
+<div id="panel">
 <%= yield %>
-
+</div>
+</div>
 </body>
 </html>

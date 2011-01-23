@@ -1,22 +1,92 @@
 body{
 	float:left;
 	width:99%;
+	background-color:#DEDEDE;
+	margin:0px;
+	padding:0px;
+
 }
+
 form[class*="_schedule"] table {
 	width:100%;
 }
 form[class*="_schedule"] input{
 	width:10%;
 }
+#containter{
+	float:left;
+	margin-left:auto;
+	margin-right:auto;
+	width:100%;
+	background-image:url("/images/bg.jpg");
+	background-repeat:repeat-x;
+	max-height:875px;
+}
+#schedule{
+	width:80%;
+}
+#panel{
+	width:100%;
+	height:875px;
+}
+.button {
+	float:left;
+	margin-left:20px;
+	margin-top:.5em;
+	background-color:#A8A8A8;
+	padding-left:2px;
+	padding-right:2px;
+	border-left-style:solid;
+	border-right-style:solid;
+	border-width:1px;
+	background-image:url("/images/button_bg.jpg");
+	height:22px;
+	-webkit-border-radius: 5px;
+}
+.calender-location{
+	margin-left:420px;
+}
+.button img{
+	margin-top:2px;
+}
+.busy{
+	background-color:#94A4C5;
+	-webkit-border-radius:10px;
+	position:absolute;
+	width:9.4%;
+}
+menu{
+	height:55px;
+	margin:0px;
+	padding:0px;
+	width:100%;
+	padding-left:10px;
+	padding-top:7px;
+}
+menu p{
+	float:left;
+}
+.day .head{
+	float:left;
+	background-color:#A8A8A8;
+	width:100%;
+}
+
 .schedule {
 	float:left;
-	width:70%;
+	width:68%;
+	margin:1%;
+	float:left;
+	height:700px;
+	overflow:hidden;
+
 }
 .schedule .day {
 	width:14%;
 	float:left;
 	border-style:solid;
 	border-width:1px;
+	background-color:#F0F0F0;
 }
 .schedule .today {
 	background-color:#E8EFE8;
@@ -41,10 +111,10 @@ form[class*="_schedule"] input{
 }
 .schedule .day .hour .minute{
 	height:1px;
+	width:100%;
 }
 .schedule .day .hour .half_hour{
 	height:1px;
-	width:100%;
 	float:left;
 	border-width:1px;
 	border-bottom-style:dotted;
@@ -56,7 +126,37 @@ form[class*="_schedule"] input{
 	float:left;
 	width:15%;
 }
+#patients ul {
+	list-style:none;
+}
+#patients ul li{
+	width:100%;
+	background-image:url("/images/contact.jpg");
+	background-repeat: no-repeat;
+	background-position: 0 .4em;
+	padding-left: 2em;
+}
 #waiting-list{
 	float:left;
 	width:15%;
+}
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+.clearfix {
+	display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+	display: block;
+}
+ 
+* html .clearfix {
+	height: 1%;
 }

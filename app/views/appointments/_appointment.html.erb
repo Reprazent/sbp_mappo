@@ -1,3 +1,3 @@
 <li>
-	<%= link_to appointment.title, [:edit, current_user, appointment.patient, appointment] %> for <%= appointment.patient.first_name%>
+	<%= link_to appointment.title, [:edit, current_user, appointment.patient, appointment] %> for <%= "#{appointment.patient.first_name} #{appointment.patient.last_name}"%>
 </li>
